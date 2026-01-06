@@ -44,5 +44,10 @@ then
 fi
 
 echo "Subtask $SUBTASK OK."
+
+# Shut down MySQL to allow container to exit
+echo "Shutting down MySQL..."
+mysqladmin -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" shutdown
+
 exit 0
 
